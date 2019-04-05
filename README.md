@@ -1,4 +1,3 @@
-========================================================
 Fabrec README
 ========================================================
 
@@ -11,7 +10,6 @@ Fabrec is a fashion recommendation service that crowdsources outfit recommendati
 
 ------------------------------------------------------------------------
 
-========================
 Data Collection
 ========================
 
@@ -37,7 +35,6 @@ For example, a crowdworker is asked to input a style of top and a style of pants
 
 ------------------------------------------------------------------------
 
-========================
 User Interface
 ========================
 
@@ -82,7 +79,6 @@ The aggregated top ranked clothing links would then be recommendations we give t
 
 ------------------------------------------------------------------------
 
-========================
 Business Model
 ========================
 
