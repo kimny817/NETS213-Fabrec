@@ -2,8 +2,6 @@
 import pandas as pd
 import csv
 
-
-
 def process(mturk_res):
     target_items = mturk_res['Input.target_item']
     target_items = list(dict.fromkeys(target_items))
@@ -42,7 +40,7 @@ def main():
 
     ranks = process(mturk_res)
 
-    df = pd.DataFrame(ranks, columns = ['target_item', 'choice 1', 'choice 2', 'choice3'])
+    df = pd.DataFrame(ranks, columns = ['target_item', 'choice 1', 'choice 2', 'choice 3'])
     df.to_csv('HIT3Result.csv', index=False)
 
 if __name__ == '__main__':

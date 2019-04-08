@@ -1,0 +1,4 @@
+user_input,clothes1,clothes2,clothes3,color1,color2,color3
+https://s3.amazonaws.com/nets213-fabrec/input1,https://s3.amazonaws.com/nets213-fabrec/top1,https://s3.amazonaws.com/nets213-fabrec/top2,https://s3.amazonaws.com/nets213-fabrec/top3,black,white,grey
+https://s3.amazonaws.com/nets213-fabrec/input2,https://s3.amazonaws.com/nets213-fabrec/bottom1,https://s3.amazonaws.com/nets213-fabrec/bottom2,https://s3.amazonaws.com/nets213-fabrec/bottom3,blue,red,purple
+https://s3.amazonaws.com/nets213-fabrec/input3,https://s3.amazonaws.com/nets213-fabrec/shoe1,https://s3.amazonaws.com/nets213-fabrec/shoe2,https://s3.amazonaws.com/nets213-fabrec/shoe3,green,orange,violet
