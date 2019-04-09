@@ -28,7 +28,6 @@ HIT2 is used to collect clothing recommendations from workers while presenting t
 HIT3 takes the links submitted in HIT2 and asks Turkers to flag non-clothing items or inappropriate links. Additionally, Turkers will choose the best 3 items of clothing. The input CSV contains all the links to clothing items recommended by Turkers. The output CSV shows the flagged items in addition to how many votes there are for each item. 
 
 ### Quality Control/Aggregation Module
-Our first quality control is implemented by HIT3 to check HIT2. HIT3 will filter out the links provided that are not correct articles of clothing. Our second quality control is implemented in HIT3. We will insert a link to a non-clothing item and filter out answers accordingly. 
 
 #### Aggregation Module
 Aggregation Module consists of several parts. The first part would be collecting the top 3 ranking matching colors and top 3 matching styles from HIT1.
@@ -39,4 +38,4 @@ Third part would be getting the top 4 images from HIT3 that are suitable for the
 
 #### Quality Control
 
-Quality control exists in processing the HIT3 outputs, where we would ask turkers to flag non-clothing or inappropriate pictures, we would exclude the these pictures
+Quality control exists in processing the HIT3 outputs, where we would ask turkers to flag non-clothing or inappropriate pictures, we would exclude the these pictures. Our second quality control is implemented in HIT3. We will insert a link to a non-clothing item and filter out answers accordingly. 
