@@ -22,9 +22,13 @@ HIT1-2 consists of style matching, which the input would be a picture of either 
 HIT1 would represents as the reference data which would direct future turkers in providing clothes recommendations based on user input.
 
 #### HIT2
+HIT2 is used to collect clothing recommendations from workers while presenting them the color and style matching we obtained from HIT1-1 and HIT1-2. Workers are presented with input CSV which suggests 3 styles and 3 colors. The worker must input 3 links for pieces of recommended clothing. 
+
 #### HIT3
+HIT3 takes the links submitted in HIT2 and asks Turkers to flag non-clothing items or inappropriate links. Additionally, Turkers will choose the best 3 items of clothing. The input CSV contains all the links to clothing items recommended by Turkers. The output CSV shows the flagged items in addition to how many votes there are for each item. 
 
 ### Quality Control/Aggregation Module
+Our first quality control is implemented by HIT3 to check HIT2. HIT3 will filter out the links provided that are not correct articles of clothing. Our second quality control is implemented in HIT3. We will insert a link to a non-clothing item and filter out answers accordingly. 
 
 #### Aggregation Module
 Aggregation Module consists of several parts. The first part would be collecting the top 3 ranking matching colors and top 3 matching styles from HIT1.
