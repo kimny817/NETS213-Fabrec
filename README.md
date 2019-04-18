@@ -82,4 +82,4 @@ The aggregated top ranked clothing links would then be recommendations we give t
 Business Model
 ========================
 
-In order to maintain a consistently updating website, we would ask Fabrec customers to provide recommendations as well getting recommendations. Therefore, we ask Fabrec customers to submit 5 HITs before getting their recommendations
+In order to maintain a consistently updating website, we would strongly recommend Fabrec customers to provide recommendations as well getting recommendations. Therefore, we kindly ask Fabrec customers to submit 5 HITs before getting their recommendations
