@@ -6,7 +6,12 @@ Fabrec README
 By Jina Lo, Nayeong Kim, Rose Kong, Shannie Cheng
 -------------------------------------------------
 
-Fabrec (https://nets213-fabrec.squarespace.com password: fabrec) is a fashion recommendation service that crowdsources outfit recommendations using Amazon Mechanical Turk. We recommend complementary fashion items based on the clothing item our customers own. For example, a customer want to find a skirt that would goes well with the top she owns. She would upload the picture of her top and Fabrec would give her some options of skirts with a link of each item as recommendations.
+In order to get access to our service, each customer would have to go on to out website
+
+``` https://nets213-fabrec.squarespace.com/ ``` 
+with the password ``` fabrec``` 
+
+Fabrec is a fashion recommendation service that crowdsources outfit recommendations using Amazon Mechanical Turk. We recommend complementary fashion items based on the clothing item our customers own. For example, a customer want to find a skirt that would goes well with the top she owns. She would upload the picture of her top and Fabrec would give her some options of skirts with a link of each item as recommendations.
 
 ------------------------------------------------------------------------
 
