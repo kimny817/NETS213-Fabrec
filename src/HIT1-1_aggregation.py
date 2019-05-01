@@ -1,57 +1,54 @@
 import pandas as pd
 
-COLOR_INDEX = ['Answer.color1', 'Answer.color2', 'Answer.color3', 'Answer.color4']
+COLOR_INDEX_ANS = ['Answer.color1.on', 'Answer.color2.on', 'Answer.color3.on', 
+'Answer.color4.on', 'Answer.color5.on', 'Answer.color6.on', 'Answer.color7.on', 'Answer.color8.on',
+'Answer.color9.on','Answer.color10.on', 'Answer.color11.on', 'Answer.color12.on', 'Answer.color13.on', 'Answer.color14.on',
+'Answer.color15.on', 'Answer.color16.on', 'Answer.color17.on']
 
+COLOR_INDEX_IN = ['Input.color1','Input.color2', 'Input.color3', 'Input.color4', 'Input.color5', 'Input.color6', 'Input.color7', 
+'Input.color8', 'Input.color9', 'Input.color10', 'Input.color11', 'Input.color12', 'Input.color13', 'Input.color14', 'Input.color15', 'Input.color16', 
+'Input.color17']
 
-def color_matching_aggregation(csv_file_path):
-    color_matching_output = pd.read_csv(csv_file_path)
+def color_matching_aggregation(color_matching_output):
 
     all_input_colors = set()
     color_matching_score = dict()
-    top_three_matching = dict()
+    top_three_matching = []
 
     # get all input colors
-    for input_color in color_matching_output['Input.color']:
+    for input_color in color_matching_output['Input.target-color']:
         all_input_colors.add(input_color)
 
-    # find bidirectional color matching and score
-    for input_color in all_input_colors:
-        color_bool = color_matching_output['Input.color'] == input_color
-        individual_color_df = color_matching_output[color_bool]
-
-        for index in COLOR_INDEX:
-            colors = individual_color_df[index].values
-
-            for selected_color in colors:
-                if index == COLOR_INDEX[0]:
-                    score = 4
-                elif index == COLOR_INDEX[1]:
-                    score = 3
-                elif index == COLOR_INDEX[2]:
-                    score = 2
-                elif index == COLOR_INDEX[3]:
-                    score = 1
-
-                if (input_color, selected_color) in color_matching_score:
-                    color_matching_score[(input_color, selected_color)] \
-                        = color_matching_score[(input_color, selected_color)] + score
-                elif (selected_color, input_color) in color_matching_score:
-                    color_matching_score[(selected_color, input_color)] \
-                        = color_matching_score[(selected_color, input_color)] + score
-                else:
-                    color_matching_score[(selected_color, input_color)] = score
-
-    all_tuples = color_matching_score.keys()
-    # get the top three
     for color in all_input_colors:
-        color_arr = []
-        for in_color, sel_color in all_tuples:
-            score = color_matching_score[(in_color, sel_color)]
-            if color == in_color:
-                color_arr.append((score, sel_color))
-            elif color == sel_color:
-                color_arr.append((score, in_color))
-        color_arr = sorted(color_arr, reverse=True)[:3]
-        top_three_matching[color] = [(color, item[1]) for item in color_arr]
+        matchings = dict()
+        for incolor in all_input_colors:
+            matchings[incolor] = 0
+
+        v = color_matching_output[color_matching_output['Input.target-color'] == color]
+
+        for i in range (0, 17):
+            if True in v[COLOR_INDEX_ANS[i]].value_counts() :
+ 
+                color2 = v[COLOR_INDEX_IN[i]]
+                count = v[COLOR_INDEX_ANS[i]].value_counts()[True]
+                matchings[color2.iloc[0]] = count
+        sorted_x = sorted(matchings.items(), key=lambda kv: -kv[1])
+        top_three_matching.append((color, sorted_x[0][0], sorted_x[1][0], sorted_x[2][0]))
+
 
     return top_three_matching
+
+
+def main():
+    # Read in CVS result file with pandas
+    # PLEASE DO NOT CHANGE
+    mturk_res = pd.read_csv('HIT1-1Result.csv')
+
+    result = color_matching_aggregation(mturk_res)
+    
+    df = pd.DataFrame(result, columns = ['color', 'match1', 'match2', 'match3'])
+    df.to_csv('HIT1-1Processed.csv', index=False)
+
+if __name__ == '__main__':
+    main()
+
