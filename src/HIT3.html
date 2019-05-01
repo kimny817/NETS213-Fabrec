@@ -10,11 +10,11 @@
     document.write("<p>The following is a ${type} piece that you need to find the best matching to.</p>")
 </script>
 <div style="padding:20px;">
-  <img width="20%" src="${input}"/> </p>
+  <img width="20%" src="${input}"> </p>
 </div>
 
  <p> Select 3 pieces that best matches the piece above.</p>
- <p> If the picture is not a clothes or inappropriate, please check the report box. </p>
+ <p> "If the picture does not show clothes or if it is inappropriate, please check the report box. </p>
 
  <style>
     /* Three image containers (use 25% for four, and 50% for two, etc) */
@@ -35,56 +35,113 @@
     max-width:250px;
     max-height:500px;
     }
+    
+    .slidecontainer {
+      width: 100%; /* Width of the outside container */
+    }
+    
+    /* The slider itself */
+    .slider {
+      -webkit-appearance: none;  /* Override default CSS styles */
+      appearance: none;
+      width: 95%; /* Full-width */
+      height: 25px; /* Specified height */
+      background: #d3d3d3; /* Grey background */
+      outline: none; /* Remove outline */
+      opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+      -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+      transition: opacity .2s;
+    }
+    
+    /* Mouse-over effects */
+    .slider:hover {
+      opacity: 1; /* Fully shown on mouse-over */
+    }
+    
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none; /* Override default look */
+      appearance: none;
+      width: 25px; /* Set a specific slider handle width */
+      height: 25px; /* Slider handle height */
+      background: #000066; /* Green background */
+      cursor: pointer; /* Cursor on hover */
+    }
+    
+    .slider::-moz-range-thumb {
+      width: 25px; /* Set a specific slider handle width */
+      height: 25px; /* Slider handle height */
+      background: #4CAF50; /* Green background */
+      cursor: pointer; /* Cursor on hover */
+    }
  </style>
 
 <div class="row">
   <div class="column">
     <img src="${link1}" style="width:100%">
-    <crowd-checkbox style="padding-left:10px;" name="link1">select</crowd-checkbox> 
-    <crowd-checkbox style="padding-left:70px;" name="link1_report">report</crowd-checkbox>
+    <div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" name="link1">
+    </div>
+    <crowd-checkbox name="link1_report">report</crowd-checkbox>
   </div>
   <div class="column">
     <img src="${link2}" style="width:100%">
-    <crowd-checkbox style="padding-left:10px;" name="link2">select</crowd-checkbox> 
-    <crowd-checkbox style="padding-left:70px;" name="link2_report">report</crowd-checkbox>
+    <div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" name="link2">
+    </div>
+    <crowd-checkbox name="link2_report">report</crowd-checkbox>
   </div>
   <div class="column">
     <img src="${link3}" style="width:100%">
-    <crowd-checkbox style="padding-left:10px;" name="link3">select</crowd-checkbox> 
-    <crowd-checkbox style="padding-left:70px;" name="link3_report">report</crowd-checkbox>
+    <div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" name="link3">
+    </div>
+    <crowd-checkbox name="link3_report">report</crowd-checkbox>
   </div>
     <div class="column">
     <img src="${link4}" style="width:100%">
-    <crowd-checkbox style="padding-left:10px;" name="link4">select</crowd-checkbox> 
-    <crowd-checkbox style="padding-left:70px;" name="link4_report">report</crowd-checkbox>
+    <div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" name="link4">
+    </div>
+    <crowd-checkbox name="link4_report">report</crowd-checkbox>
   </div>
     <div class="column">
     <img src="${link5}" style="width:100%">
-    <crowd-checkbox style="padding-left:10px;" name="link5">select</crowd-checkbox> 
-    <crowd-checkbox style="padding-left:70px;" name="link5_report">report</crowd-checkbox>
+    <div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" name="link5">
+    </div>
+    <crowd-checkbox name="link5_report">report</crowd-checkbox>
   </div>
 </div>
 <p></p></br>
 <div class="row">
   <div class="column">
     <img src="${link6}" style="width:100%">
-    <crowd-checkbox style="padding-left:10px;" name="link6">select</crowd-checkbox> 
-    <crowd-checkbox style="padding-left:70px;" name="link6_report">report</crowd-checkbox>
+    <div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" name="link6">
+    </div>
+    <crowd-checkbox name="link6_report">report</crowd-checkbox>
   </div>
   <div class="column">
     <img src="${link7}" style="width:100%">
-    <crowd-checkbox style="padding-left:10px;" name="link7">select</crowd-checkbox> 
-    <crowd-checkbox style="padding-left:70px;" name="link7_report">report</crowd-checkbox>
+    <div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" name="link7">
+    </div>
+    <crowd-checkbox name="link7_report">report</crowd-checkbox>
   </div>
   <div class="column">
     <img src="${link8}" style="width:100%">
-    <crowd-checkbox style="padding-left:10px;" name="link8">select</crowd-checkbox> 
-    <crowd-checkbox style="padding-left:70px;" name="link8_report">report</crowd-checkbox>
+    <div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" name="link8">
+    </div>
+    <crowd-checkbox name="link8_report">report</crowd-checkbox>
   </div>
     <div class="column">
     <img src="${link9}" style="width:100%">
-    <crowd-checkbox style="padding-left:10px;" name="link9">select</crowd-checkbox> 
-    <crowd-checkbox style="padding-left:70px;" name="link9_report">report</crowd-checkbox>
+    <div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" name="link9">
+    </div>
+    <crowd-checkbox name="link9_report">report</crowd-checkbox>
   </div>
 </div>
 

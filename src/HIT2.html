@@ -1,0 +1,61 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+<style>
+.color-box {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    outline-style: solid;
+    outline-width: thin;
+    left: 5px;
+    top: 5px;
+}</style>
+
+
+    
+</style>
+    <div>
+        <strong>Instructions: </strong> 
+        <span>Provide links to 3 items that will go well with the given item.</br> 
+        If a given item is a top, provide bottom (pants/skirts). If a given item is a dress, provide shoes. </br>
+        <i>Please make sure all items are from <a href="http://www.amazon.com/">Amazon</a>.</i>
+</span>
+        <div>
+            <div>
+                <p><strong>Find a complementary piece for:</strong></p>
+
+                <!-- Your website URLs will be substituted for the "url" variable when you publish 
+                       a batch with an input file containing multiple website URLs -->
+                <a href="${user_input}"><img src="${user_input}" width=300px height =auto></a>
+
+            </div>
+            
+            <div><p> Other users have suggested these styles and color pairings:</p>
+                Styles: <img src = "${clothes1}">, <img src = " ${clothes2}">, <img src=" ${clothes3}"></br>
+                Colors: <div class="color-box" style="background-color:${color1};"> </div>, <div class="color-box" style="background-color:${color2};"> </div>, <div class="color-box" style="background-color:${color3};"> </div>
+            </div>
+            
+            <div>
+                <p><strong>Item 1:</strong></p>
+                <p><crowd-input name="item1" placeholder="Find a piece of clothing from Amazon.com..." required></crowd-input></p>
+             
+            </div>
+
+            <div>
+                <p><strong>Item 2:</strong></p>
+                <crowd-input name="item2" placeholder="Find a piece of clothing from Amazon.com..." required></crowd-input>
+            </div>
+
+            <div>
+                <p><strong>Item 3:</strong></p>
+                <crowd-input name="item3" placeholder="Find a piece of clothing from Amazon.com..." required></crowd-input>
+            </div>
+        </div>
+    </div>
+</crowd-form>
